@@ -14,12 +14,34 @@ namespace biblioteca
 
             int retorno = 0;
 
-            MySqlCommand comando = new MySqlCommand(string.Format("Insert into cliente (codTes, tituloTes, carreraTes, nombreEsTes, ciEst, nombreTutor, especialidad, codTutor) values ('{0}','{1}','{2}', '{3}', '{4}', '{5}', '{6}', '{7}')",
-               Tes.codtes, Tes.titulites, Tes.carretes, Tes.nomtes, Tes.cites, Tes.nombtes, Tes.especialidadtes, Tes.codites), conexion.ObtenerConexion());
+            MySqlCommand comando = new MySqlCommand(string.Format("Insert into tesis (codTes, tituloTes, carreraTes, nombreEsTes, ciEst, nombreTutor, especialidad, codTutor) values ('{0}','{1}','{2}', '{3}', '{4}', '{5}', '{6}', '{7}')",
+               Tes.codtes, Tes.titulites, Tes.carretes, Tes.nombretes, Tes.cites, Tes.nombtes, Tes.especialidadtes, Tes.codites), conexion.ObtenerConexion());
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
+        public static List<tesis> Buscar()
+        {
+            List<tesis> _lista = new List<tesis>();
 
+            MySqlCommand _comando = new MySqlCommand(String.Format(
+           "SELECT codTes, tituloTes, carreraTes, nombreEsTes,ciEst,nombreTutor,especialidad,codTutor FROM tesis"), tesis.ObtenerConexion());
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                tesis pCliente = new tesis();
+                pCliente.codtes = _reader.GetString(0);
+                pCliente.titulites = _reader.GetString(1);
+                pCliente.carretes = _reader.GetString(2);
+                pCliente.nombretes = _reader.GetString(3);
+                pCliente.cites = _reader.GetString(4);
+                pCliente.nombtes = _reader.GetString(5);
+                pCliente.especialidadtes = _reader.GetString(6);
+                pCliente.codites = _reader.GetString(7);
+                _lista.Add(pCliente);
+            }
+
+            return _lista;
+        }
         /*public static List<tesis> Buscar()
         {
             List<tesis> _lista = new List<tesis>();

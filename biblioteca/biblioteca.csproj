@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.cs" />
+    <Compile Include="estudiante.cs" />
+    <Compile Include="estudianteBD.cs" />
+    <Compile Include="estudiantes.cs" />
+    <Compile Include="estudiantesBD.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +64,8 @@
     <Compile Include="inicio.Designer.cs">
       <DependentUpon>inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="libros.cs" />
+    <Compile Include="librosBD.cs" />
     <Compile Include="lista.cs" />
     <Compile Include="listaEstudiante.cs" />
     <Compile Include="listaLibro.cs" />
@@ -91,6 +97,12 @@
     </Compile>
     <Compile Include="registroLibros.Designer.cs">
       <DependentUpon>registroLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrosTodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrosTodo.Designer.cs">
+      <DependentUpon>RegistrosTodo.cs</DependentUpon>
     </Compile>
     <Compile Include="registroTesis.cs">
       <SubType>Form</SubType>
@@ -126,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="registroLibros.resx">
       <DependentUpon>registroLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrosTodo.resx">
+      <DependentUpon>RegistrosTodo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="registroTesis.resx">
       <DependentUpon>registroTesis.cs</DependentUpon>

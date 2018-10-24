@@ -13,7 +13,7 @@ namespace biblioteca
     public partial class registroTesis : Form
     {
         validacion vali;
-        private object errorProvider1;
+      //  private object errorProvider1;
         
         public registroTesis()
         {
@@ -23,40 +23,29 @@ namespace biblioteca
 
         private void bto_registrar_Click(object sender, EventArgs e)
         {
-            /* if (txt_codigo.Text == "" || txt_titulo.Text == "" || txt_carrera.Text == "" || txt_nomTesista.Text == "" || txt_citesista.Text == "" || txt_nomtutor.Text == "" || txt_especialidad.Text == "" || txt_codigo.Text == "")
+            /*  if (txt_codigo.Text == "" || txt_titulo.Text == "" || txt_carreraa.Text == "" || txt_nombreTesista.Text == "" || txt_citesista.Text == "" || txt_nomtutor.Text == "" || txt_especialidad.Text == "" || txt_codtutor.Text == "")
               {
-                  errorProvider1.SetError(txt_codigo, "Ingrese CI");
-                  errorProvider1.SetError(txt_titulo, "Ingrese Nombres");
-                  errorProvider1.SetError(txt_carrera, "Ingrese Telefono");
-                  errorProvider1.SetError(txt_nomTesista, "Ingrese Domicilio");
-                  errorProvider1.SetError(txt_citesista, "Ingrese Domicilio");
-                  errorProvider1.SetError(txt_nomtutor, "Ingrese Domicilio");
-                  errorProvider1.SetError(txt_especialidad, "Ingrese Domicilio");
-                  errorProvider1.SetError(txt_codigo, "Ingrese Domicilio");
+                  errorProvider1.SetError(txt_ci, "Ingrese CI");
+                  errorProvider1.SetError(txt_nombre, "Ingrese Nombres");
+                  errorProvider1.SetError(txt_telefono, "Ingrese Telefono");
+                  errorProvider1.SetError(txt_domicilio, "Ingrese Domicilio");
               }
               else
               {
-                  errorProvider1.SetError(txt_codigo, " ");
-                  errorProvider1.SetError(txt_titulo, "");
-                  errorProvider1.SetError(txt_carrera, "");
-                  errorProvider1.SetError(txt_nomTesista, "");
-                  errorProvider1.SetError(txt_citesista, "");
-                  errorProvider1.SetError(txt_nomtutor, "");
-                  errorProvider1.SetError(txt_especialidad, "");
-                  errorProvider1.SetError(txt_codigo, "");
-                  tesis Tes = new tesis();
-                  Tes.codtes= txt_codigo.Text.Trim();
-                  Tes.titulites = txt_titulo.Text.Trim();
-                  Tes.carretes = txt_carrera.Text.Trim();
-                  Tes.nomtes = txt_nomTesista.Text.Trim();
-                  Tes.cites = txt_citesista.Text.Trim();
-                  Tes.nombtes = txt_nomtutor.Text.Trim();
-                  Tes.especialidadtes = txt_especialidad.Text.Trim();
-                  Tes.codites = txt_codigo.Text.Trim();
-                  int resultado = tesisBD.Agregar(Tes);
+                  errorProvider1.SetError(txt_ci, "");
+                  errorProvider1.SetError(txt_nombre, "");
+                  errorProvider1.SetError(txt_telefono, "");
+                  errorProvider1.SetError(txt_domicilio, "");
+                  Proveedor Provee = new Proveedor();
+                  Provee.ciProveedor = txt_ci.Text.Trim();
+                  Provee.nomProveedor = txt_nombre.Text.Trim();
+                  Provee.teleProveedor = txt_telefono.Text.Trim();
+                  Provee.domiProveedor = txt_domicilio.Text.Trim();
+
+                  int resultado = ProveedorBD.Agregar(Provee);
                   if (resultado > 0)
                   {
-                      MessageBox.Show("Cliente Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                      MessageBox.Show("Proveedor Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                       txt_ci.Text = "";
                       txt_nombre.Text = "";
                       txt_telefono.Text = "";
@@ -64,24 +53,27 @@ namespace biblioteca
                   }
                   else
                   {
-                      MessageBox.Show("No se pudo guardar el Cliente", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                      MessageBox.Show("No se pudo guardar el Proveedor", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                       txt_ci.Text = "";
                       txt_nombre.Text = "";
                       txt_telefono.Text = "";
                       txt_domicilio.Text = "";
                   }
               }*/
-            tesis pCliente = new tesis();
-            pCliente.codtes = txt_codigo.Text.Trim();
-            pCliente.titulites = txt_titulo.Text.Trim();
-            pCliente.carretes = txt_carrera.Text.Trim();
-            pCliente.nomtes = txt_nomTesista.Text.Trim();
-            pCliente.carretes = txt_citesista.Text;
-            pCliente.nombtes = txt_nomtutor.Text.Trim();
-            pCliente.especialidadtes = txt_especialidad.Text.Trim();
-            pCliente.codites = txt_codtutor.Text.Trim();
 
-            int resultado = tesisBD.Agregar(pCliente);
+
+
+            tesis pTesis = new tesis();
+            pTesis.codtes = txt_codigo.Text.Trim();
+            pTesis.titulites = txt_titulo.Text.Trim();
+            pTesis.carretes = txt_carreraa.Text.Trim();
+            pTesis.nombretes = txt_nombreTesista.Text.Trim();
+            pTesis.cites = txt_citesista.Text.Trim();
+            pTesis.nombtes = txt_nomtutor.Text.Trim();
+            pTesis.especialidadtes = txt_especialidad.Text.Trim();
+            pTesis.codites = txt_codtutor.Text.Trim();
+
+            int resultado = tesisBD.Agregar(pTesis);
             if (resultado > 0)
             {
                 MessageBox.Show(" Registrado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -91,17 +83,17 @@ namespace biblioteca
             {
                 MessageBox.Show("No se pudo Registrar ", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
-
         }
-        void Limpiar()
+       public void Limpiar()
         {
             txt_codigo.Clear();
             txt_titulo.Clear();
-            
-
-            
-            
+            txt_carreraa.Clear();
+            txt_nombreTesista.Clear();
+            txt_citesista.Clear();
+            txt_nomtutor.Clear();
+            txt_especialidad.Clear();
+            txt_codtutor.Clear();
 
         }
         private void txt_no(object sender, KeyPressEventArgs e)
@@ -119,6 +111,11 @@ namespace biblioteca
             inicio usu = new inicio();
             this.Hide();
             usu.Show();
+        }
+
+        private void bto_mostrar_li_Click(object sender, EventArgs e)
+        {
+            dgvBuscar.DataSource = tesisBD.Buscar();
         }
     }
 

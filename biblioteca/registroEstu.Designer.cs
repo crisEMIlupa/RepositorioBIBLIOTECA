@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lst_estudiante = new System.Windows.Forms.ListBox();
             this.bto_volver = new System.Windows.Forms.Button();
             this.bto_mostrar_estu = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,17 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nomb = new System.Windows.Forms.TextBox();
             this.bto_registrar = new System.Windows.Forms.Button();
+            this.dgvBuscar = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lst_estudiante
-            // 
-            this.lst_estudiante.FormattingEnabled = true;
-            this.lst_estudiante.ItemHeight = 16;
-            this.lst_estudiante.Location = new System.Drawing.Point(648, 92);
-            this.lst_estudiante.Margin = new System.Windows.Forms.Padding(4);
-            this.lst_estudiante.Name = "lst_estudiante";
-            this.lst_estudiante.Size = new System.Drawing.Size(543, 580);
-            this.lst_estudiante.TabIndex = 35;
             // 
             // bto_volver
             // 
@@ -80,7 +71,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(43, 396);
+            this.label6.Location = new System.Drawing.Point(43, 346);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 25);
             this.label6.TabIndex = 30;
@@ -89,7 +80,7 @@
             // txt_domicilio
             // 
             this.txt_domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_domicilio.Location = new System.Drawing.Point(315, 391);
+            this.txt_domicilio.Location = new System.Drawing.Point(315, 341);
             this.txt_domicilio.Name = "txt_domicilio";
             this.txt_domicilio.Size = new System.Drawing.Size(297, 30);
             this.txt_domicilio.TabIndex = 29;
@@ -98,7 +89,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(43, 158);
+            this.label5.Location = new System.Drawing.Point(43, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 25);
             this.label5.TabIndex = 28;
@@ -107,7 +98,7 @@
             // txt_telefono
             // 
             this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefono.Location = new System.Drawing.Point(315, 333);
+            this.txt_telefono.Location = new System.Drawing.Point(315, 406);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(297, 30);
             this.txt_telefono.TabIndex = 27;
@@ -153,7 +144,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 340);
+            this.label2.Location = new System.Drawing.Point(45, 413);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 25);
             this.label2.TabIndex = 22;
@@ -162,7 +153,7 @@
             // txt_codigo
             // 
             this.txt_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo.Location = new System.Drawing.Point(315, 156);
+            this.txt_codigo.Location = new System.Drawing.Point(315, 85);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(297, 30);
             this.txt_codigo.TabIndex = 21;
@@ -171,7 +162,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 104);
+            this.label1.Location = new System.Drawing.Point(43, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 25);
             this.label1.TabIndex = 20;
@@ -180,7 +171,7 @@
             // txt_nomb
             // 
             this.txt_nomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nomb.Location = new System.Drawing.Point(315, 104);
+            this.txt_nomb.Location = new System.Drawing.Point(315, 150);
             this.txt_nomb.Name = "txt_nomb";
             this.txt_nomb.Size = new System.Drawing.Size(297, 30);
             this.txt_nomb.TabIndex = 19;
@@ -195,12 +186,23 @@
             this.bto_registrar.UseVisualStyleBackColor = true;
             this.bto_registrar.Click += new System.EventHandler(this.bto_registrar_Click);
             // 
+            // dgvBuscar
+            // 
+            this.dgvBuscar.BackgroundColor = System.Drawing.Color.Yellow;
+            this.dgvBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBuscar.Location = new System.Drawing.Point(630, 118);
+            this.dgvBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvBuscar.Name = "dgvBuscar";
+            this.dgvBuscar.ReadOnly = true;
+            this.dgvBuscar.Size = new System.Drawing.Size(661, 303);
+            this.dgvBuscar.TabIndex = 36;
+            // 
             // registroEstu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 763);
-            this.Controls.Add(this.lst_estudiante);
+            this.ClientSize = new System.Drawing.Size(1344, 744);
+            this.Controls.Add(this.dgvBuscar);
             this.Controls.Add(this.bto_volver);
             this.Controls.Add(this.bto_mostrar_estu);
             this.Controls.Add(this.label6);
@@ -218,14 +220,13 @@
             this.Controls.Add(this.bto_registrar);
             this.Name = "registroEstu";
             this.Text = "registroEstu";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lst_estudiante;
         private System.Windows.Forms.Button bto_volver;
         private System.Windows.Forms.Button bto_mostrar_estu;
         private System.Windows.Forms.Label label6;
@@ -241,5 +242,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_nomb;
         private System.Windows.Forms.Button bto_registrar;
+        private System.Windows.Forms.DataGridView dgvBuscar;
     }
 }
