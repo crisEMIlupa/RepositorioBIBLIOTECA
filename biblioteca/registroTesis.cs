@@ -23,46 +23,6 @@ namespace biblioteca
 
         private void bto_registrar_Click(object sender, EventArgs e)
         {
-            /*  if (txt_codigo.Text == "" || txt_titulo.Text == "" || txt_carreraa.Text == "" || txt_nombreTesista.Text == "" || txt_citesista.Text == "" || txt_nomtutor.Text == "" || txt_especialidad.Text == "" || txt_codtutor.Text == "")
-              {
-                  errorProvider1.SetError(txt_ci, "Ingrese CI");
-                  errorProvider1.SetError(txt_nombre, "Ingrese Nombres");
-                  errorProvider1.SetError(txt_telefono, "Ingrese Telefono");
-                  errorProvider1.SetError(txt_domicilio, "Ingrese Domicilio");
-              }
-              else
-              {
-                  errorProvider1.SetError(txt_ci, "");
-                  errorProvider1.SetError(txt_nombre, "");
-                  errorProvider1.SetError(txt_telefono, "");
-                  errorProvider1.SetError(txt_domicilio, "");
-                  Proveedor Provee = new Proveedor();
-                  Provee.ciProveedor = txt_ci.Text.Trim();
-                  Provee.nomProveedor = txt_nombre.Text.Trim();
-                  Provee.teleProveedor = txt_telefono.Text.Trim();
-                  Provee.domiProveedor = txt_domicilio.Text.Trim();
-
-                  int resultado = ProveedorBD.Agregar(Provee);
-                  if (resultado > 0)
-                  {
-                      MessageBox.Show("Proveedor Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                      txt_ci.Text = "";
-                      txt_nombre.Text = "";
-                      txt_telefono.Text = "";
-                      txt_domicilio.Text = "";
-                  }
-                  else
-                  {
-                      MessageBox.Show("No se pudo guardar el Proveedor", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                      txt_ci.Text = "";
-                      txt_nombre.Text = "";
-                      txt_telefono.Text = "";
-                      txt_domicilio.Text = "";
-                  }
-              }*/
-
-
-
             tesis pTesis = new tesis();
             pTesis.codtes = txt_codigo.Text.Trim();
             pTesis.titulites = txt_titulo.Text.Trim();
